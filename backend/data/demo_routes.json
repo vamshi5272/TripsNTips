@@ -1,0 +1,29 @@
+{
+  "notice": "DEMO DATA ONLY — not live fares, schedules, or availability.",
+  "locations": [
+    {"id":"HYD_HOME","name":"Hyderabad (Starting Point)","city":"Hyderabad","type":"origin","lat":17.3850,"lon":78.4867},
+    {"id":"HYD_RAIL","name":"Hyderabad Railway Station","city":"Hyderabad","type":"railway_station","lat":17.3850,"lon":78.4870},
+    {"id":"HYD_AIR","name":"Rajiv Gandhi International Airport","city":"Hyderabad","type":"airport","lat":17.2403,"lon":78.4294},
+    {"id":"VIJ_RAIL","name":"Vijayawada Railway Station","city":"Vijayawada","type":"railway_station","lat":16.5178,"lon":80.6168},
+    {"id":"BLR_RAIL","name":"Bengaluru Railway Station","city":"Bengaluru","type":"railway_station","lat":12.9767,"lon":77.5713},
+    {"id":"GOA_RAIL","name":"Madgaon Railway Station","city":"Goa","type":"railway_station","lat":15.2832,"lon":73.9862},
+    {"id":"GOA_AIR","name":"Goa Airport","city":"Goa","type":"airport","lat":15.3800,"lon":73.8310},
+    {"id":"GOA_CENTER","name":"Goa (Final Destination)","city":"Goa","type":"destination","lat":15.2993,"lon":74.1240},
+    {"id":"HUB_HAMPI","name":"Hampi (Optional Sightseeing Stop)","city":"Hampi","type":"sightseeing","lat":15.3350,"lon":76.4600}
+  ],
+  "edges": [
+    {"id":"e1","from":"HYD_HOME","to":"HYD_RAIL","mode":"Local transport","cost":250,"duration_min":45,"kind":"access","label":"Home to railway station"},
+    {"id":"e2","from":"HYD_HOME","to":"HYD_AIR","mode":"Taxi","cost":800,"duration_min":70,"kind":"access","label":"Home to airport"},
+    {"id":"e3","from":"HYD_RAIL","to":"GOA_RAIL","mode":"Train","cost":950,"duration_min":780,"kind":"main","label":"Hyderabad to Madgaon (demo connection)"},
+    {"id":"e4","from":"HYD_AIR","to":"GOA_AIR","mode":"Flight","cost":3200,"duration_min":90,"kind":"main","label":"Hyderabad to Goa (demo connection)"},
+    {"id":"e5","from":"GOA_RAIL","to":"GOA_CENTER","mode":"Local taxi/bus","cost":350,"duration_min":55,"kind":"access","label":"Madgaon to final destination"},
+    {"id":"e6","from":"GOA_AIR","to":"GOA_CENTER","mode":"Local taxi/bus","cost":500,"duration_min":50,"kind":"access","label":"Airport to final destination"},
+    {"id":"e7","from":"HYD_RAIL","to":"VIJ_RAIL","mode":"Train","cost":400,"duration_min":300,"kind":"main","label":"Hyderabad to Vijayawada (demo connection)"},
+    {"id":"e8","from":"VIJ_RAIL","to":"GOA_RAIL","mode":"Bus/Train connection","cost":1100,"duration_min":600,"kind":"main","label":"Vijayawada to Madgaon (demo connection)"},
+    {"id":"e9","from":"HYD_RAIL","to":"BLR_RAIL","mode":"Train/Bus connection","cost":700,"duration_min":570,"kind":"main","label":"Hyderabad to Bengaluru (demo connection)"},
+    {"id":"e10","from":"BLR_RAIL","to":"GOA_RAIL","mode":"Bus/Train connection","cost":850,"duration_min":540,"kind":"main","label":"Bengaluru to Madgaon (demo connection)"},
+    {"id":"e11","from":"BLR_RAIL","to":"HUB_HAMPI","mode":"Bus/local transport","cost":600,"duration_min":360,"kind":"sightseeing_access","label":"Bengaluru to Hampi (demo connection)"},
+    {"id":"e12","from":"HUB_HAMPI","to":"GOA_RAIL","mode":"Bus/Train connection","cost":950,"duration_min":600,"kind":"main","label":"Hampi to Madgaon (demo connection)"}
+  ],
+  "sightseeing": {"HUB_HAMPI": {"stop_cost": 500, "stop_duration_min": 180}}
+}
